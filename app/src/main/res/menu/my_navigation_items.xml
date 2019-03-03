@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_games"
+          android:title="@string/menu_games"
+          android:icon="@drawable/ic_computer_white_24dp"/>
+    <item android:id="@+id/action_table"
+          android:title="@string/menu_table"
+          android:icon="@drawable/ic_format_list_numbered_white_24dp"/>
+    <item android:id="@+id/action_more"
+          android:title="@string/menu_more"
+          android:icon="@drawable/ic_more_horiz_white_24dp"/>
+</menu>
