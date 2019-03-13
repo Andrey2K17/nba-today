@@ -26,12 +26,9 @@ class GamesFragment : MvpAppCompatFragment(), GamesFragmentView {
 
     @InjectPresenter
     lateinit var gamesPresenter: GamesPresenter
-    //val queue = Volley.newRequestQueue(context)
-    private val URL_DATA = "https://stats.nba.com/stats/scoreboardv2/?gamedate=03.04.19&leagueid=00&dayoffset=0"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         gamesPresenter.gamesRequest()
-        //loadData()
     }
 
     override fun onCreateView(
@@ -54,24 +51,5 @@ class GamesFragment : MvpAppCompatFragment(), GamesFragmentView {
 
     override fun setGame(game: String) {
         gamesId.setText(game)
-    }
-
-    private fun loadData(){
-        val queue = Volley.newRequestQueue(context)
-        var stringRequest = StringRequest(Request.Method.GET,URL_DATA,
-            Response.Listener<String>{
-                response ->
-                var strResp = response.toString()
-                Log.d("qwerty", strResp)
-                val jsonObj: JSONObject = JSONObject(strResp)
-                val jsonArray: JSONArray = jsonObj.getJSONArray("resultSets")
-                var str_user = ""
-                //var jsonInner = jsonArray.getJSONObject(1).getJSONArray("rowSet").getJSONArray(1)
-                var jsonInner = jsonObj.getJSONObject("parameters")
-                str_user = jsonInner.get("GameDate").toString()
-                setGame(str_user)
-            },
-            Response.ErrorListener { gamesId.setText("Залупа") })
-        queue.add(stringRequest)
     }
 }
