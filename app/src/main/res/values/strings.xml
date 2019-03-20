@@ -9,4 +9,16 @@
     <string name="gamesFragment">Игры</string>
     <string name="tableLeads">Таблица лидеров</string>
     <string name="asd">Название игры</string>
+    <string name="leftteam">leftTeam</string>
+    <string name="rightteam">rightteam</string>
+    <string name="leftTeamPts">123</string>
+    <string name="gameStatus">gameStatus</string>
+    <string name="leftimage">leftImage</string>
+    <string name="rightImage">rightImage</string>
+    <string name="back">назад</string>
+    <string name="forward">вперед</string>
+    <string name="home">home</string>
+    <string name="guest">guest</string>
+    <string name="Player">Игрок</string>
+    <string name="Pts">ОЧК</string>
 </resources>

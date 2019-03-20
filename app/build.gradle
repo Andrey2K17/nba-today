@@ -95,5 +95,11 @@ dependencies {
 
     implementation 'com.android.volley:volley:1.1.0'
 
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    kapt 'com.github.bumptech.glide:compiler:4.9.0'
+
+    implementation 'com.kirich1409.svgplugin:glide4:1.0.0'
+    implementation 'com.caverock:androidsvg:1.2.1'
+
 
 }

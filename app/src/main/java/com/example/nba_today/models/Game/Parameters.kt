@@ -1,4 +1,4 @@
-package com.example.nba_today.models
+package com.example.nba_today.models.Game
 
 import com.google.gson.annotations.SerializedName
 
