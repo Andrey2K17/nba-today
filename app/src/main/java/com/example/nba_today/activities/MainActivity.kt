@@ -3,9 +3,7 @@ package com.example.nba_today.activities
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import com.arellomobile.mvp.MvpAppCompatActivity
-import com.arellomobile.mvp.MvpFragment
 import com.example.nba_today.R
 import com.example.nba_today.fragments.GamesFragment
 import com.example.nba_today.fragments.MoreFragment
@@ -16,9 +14,8 @@ class MainActivity : MvpAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         val navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        navigation.setOnNavigationItemSelectedListener (mOnNavigationItemSelectedListener)
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         val fragment = GamesFragment.newInstance()
         addFragment(fragment)
@@ -28,18 +25,15 @@ class MainActivity : MvpAppCompatActivity() {
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.action_games -> {
-                    val fragment = GamesFragment.newInstance()
-                    addFragment(fragment)
+                    addFragment(GamesFragment.newInstance())
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.action_table -> {
-                    val fragment = TableFragment()
-                    addFragment(fragment)
+                    addFragment(TableFragment())
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.action_more -> {
-                    val fragment = MoreFragment()
-                    addFragment(fragment)
+                    addFragment(MoreFragment())
                     return@OnNavigationItemSelectedListener true
                 }
             }

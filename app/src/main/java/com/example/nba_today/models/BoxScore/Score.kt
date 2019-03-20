@@ -1,6 +1,6 @@
-package com.example.nba_today.common2
+package com.example.nba_today.models.BoxScore
 
-data class InstanceExample(
+data class Score(
     val parameters: Parameters,
     val resource: String,
     val resultSets: List<ResultSet>
