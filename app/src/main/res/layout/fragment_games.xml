@@ -5,15 +5,25 @@
              android:layout_height="match_parent"
              tools:context=".fragments.GamesFragment">
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/gamesFragment"/>
+    <Button
+            android:id="@+id/btn_back"
+            android:text="@string/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+    />
 
-    <EditText
-            android:id="@+id/gamesId"
+    <Button
+            android:id="@+id/btn_forward"
+            android:text="@string/forward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+    />
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/asd"/>
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"/>
 
 </FrameLayout>
