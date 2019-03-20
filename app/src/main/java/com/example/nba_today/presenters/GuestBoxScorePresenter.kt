@@ -25,8 +25,10 @@ class GuestBoxScorePresenter() : MvpPresenter<GuestBoxScoreFragmentView>() {
                     for (i in 0 until it.resultSets[0].rowSet!!.size) {
                         model.add(
                             Score(
-                                it.resultSets[0].rowSet!![i][5],
-                                it.resultSets[0].rowSet!![i][26]
+                                it.resultSets[0].rowSet!![i][5].substringBefore(" "),
+                                it.resultSets[0].rowSet!![i][5].substringAfter(" "),
+                                it.resultSets[0].rowSet!![i][26],
+                                it.resultSets[0].rowSet!![i][4]
                             )
                         )
                     }
@@ -40,5 +42,4 @@ class GuestBoxScorePresenter() : MvpPresenter<GuestBoxScoreFragmentView>() {
                 })
         )
     }
-
 }

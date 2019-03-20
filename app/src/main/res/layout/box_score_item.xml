@@ -5,14 +5,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <TextView
-            android:id="@+id/playerName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Player"
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/playerImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:textSize="18sp"/>
+    />
+
+    <TextView
+            android:id="@+id/playerName"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Player"
+            app:layout_constraintStart_toEndOf="@id/playerImage"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="15sp"/>
+
+    <TextView
+            android:id="@+id/playerSurname"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Player"
+            app:layout_constraintStart_toEndOf="@id/playerName"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="15sp"/>
 
     <TextView
             android:id="@+id/playerPoints"
@@ -20,9 +39,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Pts"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/playerName"
-            android:textSize="18sp"
-            android:layout_marginLeft="72dp"
-            android:layout_marginStart="72dp"/>
+            app:layout_constraintStart_toEndOf="@id/playerSurname"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="18sp"/>
 
 </android.support.constraint.ConstraintLayout>
