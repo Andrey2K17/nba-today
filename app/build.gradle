@@ -50,6 +50,8 @@ dependencies {
     implementation 'com.ogaclejapan.smarttablayout:library:1.6.1@aar'
     implementation 'com.ogaclejapan.smarttablayout:utils-v4:1.6.1@aar'
     implementation 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
+    implementation 'com.github.lzyzsd:circleprogress:1.2.1'
+    implementation 'com.squareup:android-times-square:1.6.5@aar'
 
     //MVP part
     implementation 'com.arello-mobile:moxy:1.5.5'

@@ -1,18 +1,15 @@
 package com.example.nba_today.activities
 
-import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v7.app.AppCompatActivity
-import android.util.Log
+import com.arellomobile.mvp.MvpAppCompatActivity
 import com.example.nba_today.R
+import com.example.nba_today.adapters.MyViewPagerAdapter
 import com.example.nba_today.fragments.GuestBoxScoreFragment
 import com.example.nba_today.fragments.HomeBoxScoreFragment
+import com.example.nba_today.views.BoxScoreActivityView
 import kotlinx.android.synthetic.main.activity_box_score.*
 
-class BoxScoreActivity : AppCompatActivity() {
+class BoxScoreActivity : MvpAppCompatActivity(), BoxScoreActivityView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,33 +23,10 @@ class BoxScoreActivity : AppCompatActivity() {
             intent.getStringExtra("left_team")
         )
         adapter.addFragment(
-            HomeBoxScoreFragment(),
+            HomeBoxScoreFragment.newInstance(game),
             intent.getStringExtra("right_team")
         )
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
-    }
-
-    class MyViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
-
-        private val fragmentList: MutableList<Fragment> = ArrayList()
-        private val titleList: MutableList<String> = ArrayList()
-
-        override fun getItem(position: Int): Fragment {
-            return fragmentList[position]
-        }
-
-        override fun getCount(): Int {
-            return fragmentList.size
-        }
-
-        fun addFragment(fragment: Fragment, title: String) {
-            fragmentList.add(fragment)
-            titleList.add(title)
-        }
-
-        override fun getPageTitle(position: Int): CharSequence? {
-            return titleList[position]
-        }
     }
 }

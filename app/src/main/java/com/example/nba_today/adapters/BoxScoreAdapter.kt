@@ -14,9 +14,9 @@ class BoxScoreAdapter(private val boxScoreList: List<Score>) :
     RecyclerView.Adapter<BoxScoreAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context)
+        val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.box_score_item, parent, false)
-        return ViewHolder(v)
+        return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
@@ -24,21 +24,39 @@ class BoxScoreAdapter(private val boxScoreList: List<Score>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.player_name.text = boxScoreList[position].player_name
-        holder.player_sername.text = boxScoreList[position].player_surname
-        holder.player_pts.text = boxScoreList[position].player_pts
+        holder.playerName.text = boxScoreList[position].player_name
+        holder.playerSurname.text = boxScoreList[position].player_surname
+        holder.playerPts.text = boxScoreList[position].player_pts
         GlideApp.with(holder.itemView.context)
             .load("https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/${boxScoreList[position].player_id}.png")
             .apply(RequestOptions.centerCropTransform())
-            .placeholder(R.drawable.man_icon_layer)
-            .into(holder.player_img)
-    }
+            .placeholder(R.drawable.ic_man_layer)
+            .into(holder.playerImg)
+        holder.playerReb.text = boxScoreList[position].player_reb
+        holder.playerAst.text = boxScoreList[position].player_ast
+        holder.boxScoreView.setOnClickListener {
+            //            val fr = PlayerInfoFragment()
+//            val args = Bundle().apply {
+//                putString("player_id", boxScoreList[position].player_id)
+//            }
+//
 
+
+            //Toast.makeText(holder.a.context, "Кнопка нажата", Toast.LENGTH_SHORT).show()
+//            val intent = Intent(holder.itemView.context, PlayerInfoFragment::class.java)
+//            intent.putExtra("player_id", boxScoreList[position].player_id)
+//            holder.itemView.context.startActivity(intent)
+        }
+    }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val player_name = itemView.playerName
-        val player_sername = itemView.playerSurname
-        val player_pts = itemView.playerPoints
-        val player_img = itemView.playerImage
+        val playerName = itemView.playerName!!
+        val playerSurname = itemView.playerSurname!!
+        val playerPts = itemView.playerPoints!!
+        val playerImg = itemView.playerImage!!
+        val playerReb = itemView.playerRebounds!!
+        val playerAst = itemView.playerAssist!!
+        val boxScoreView = itemView
     }
+
 }
