@@ -21,4 +21,10 @@
     <string name="guest">guest</string>
     <string name="Player">Игрок</string>
     <string name="Pts">ОЧК</string>
+    <string name="surname">Фамилия</string>
+    <string name="name">Имя</string>
+    <string name="rebound">ПОД</string>
+    <string name="assist">ПЕР</string>
+    <string name="notGameToday">Сегодня игр нет</string>
+    <string name="notGamePlay">Игра еще не сыграна</string>
 </resources>

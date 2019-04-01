@@ -1,46 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/playerImage"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-    />
+        android:id="@+id/playerImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-            android:id="@+id/playerName"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/Player"
-            app:layout_constraintStart_toEndOf="@id/playerImage"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:textSize="15sp"/>
+        android:id="@+id/playerName"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/name"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/playerImage"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-            android:id="@+id/playerSurname"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="@string/Player"
-            app:layout_constraintStart_toEndOf="@id/playerName"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:textSize="15sp"/>
+        android:id="@+id/playerSurname"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/surname"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/playerName"
+        app:layout_constraintTop_toBottomOf="@id/playerName" />
 
     <TextView
-            android:id="@+id/playerPoints"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Pts"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/playerSurname"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:textSize="18sp"/>
+        android:id="@+id/playerPoints"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/Pts"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/playerSurname"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/playerRebounds"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:gravity="center"
+        android:text="@string/rebound"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/playerPoints"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/playerAssist"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:gravity="center"
+        android:text="@string/assist"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/playerRebounds"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

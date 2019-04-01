@@ -5,7 +5,7 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.example.nba_today.R
-import com.example.nba_today.fragments.GamesFragment
+import com.example.nba_today.fragments.GamesViewPagerFragment
 import com.example.nba_today.fragments.MoreFragment
 import com.example.nba_today.fragments.TableFragment
 
@@ -17,7 +17,7 @@ class MainActivity : MvpAppCompatActivity() {
         val navigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-        val fragment = GamesFragment.newInstance()
+        val fragment = GamesViewPagerFragment.newInstance()
         addFragment(fragment)
     }
 
@@ -25,7 +25,7 @@ class MainActivity : MvpAppCompatActivity() {
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.action_games -> {
-                    addFragment(GamesFragment.newInstance())
+                    addFragment(GamesViewPagerFragment.newInstance())
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.action_table -> {
