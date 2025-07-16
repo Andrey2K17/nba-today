@@ -1,7 +1,5 @@
 package com.example.nba_today.presenters
 
-import com.arellomobile.mvp.InjectViewState
-import com.arellomobile.mvp.MvpPresenter
 import com.example.nba_today.models.Score
 import com.example.nba_today.retrofit.NbaApiService
 import com.example.nba_today.retrofit.RetrofitClientInstance
@@ -9,6 +7,8 @@ import com.example.nba_today.views.BoxScoreFragmentView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
+import moxy.InjectViewState
+import moxy.MvpPresenter
 
 @InjectViewState
 class BoxScorePresenter : MvpPresenter<BoxScoreFragmentView>() {

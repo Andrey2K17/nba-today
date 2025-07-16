@@ -1,13 +1,13 @@
 package com.example.nba_today.activities
 
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
-import com.arellomobile.mvp.MvpAppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.nba_today.R
 import com.example.nba_today.fragments.GamesViewPagerFragment
 import com.example.nba_today.fragments.MoreFragment
 import com.example.nba_today.fragments.TableFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import moxy.MvpAppCompatActivity
 
 class MainActivity : MvpAppCompatActivity() {
 
@@ -43,7 +43,7 @@ class MainActivity : MvpAppCompatActivity() {
     private fun addFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
-            .setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)
+            //.setCustomAnimations(R.anim.design_bottom_sheet_slide_in, R.anim.design_bottom_sheet_slide_out)
             .replace(R.id.content, fragment, fragment.javaClass.simpleName)
             .commit()
     }

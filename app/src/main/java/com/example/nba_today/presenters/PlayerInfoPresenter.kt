@@ -1,6 +1,5 @@
 package com.example.nba_today.presenters
 
-import com.arellomobile.mvp.MvpPresenter
 import com.example.nba_today.models.PlayerItem
 import com.example.nba_today.retrofit.NbaApiService
 import com.example.nba_today.retrofit.RetrofitClientInstance
@@ -8,6 +7,7 @@ import com.example.nba_today.views.PlayerInfoFragmentView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
+import moxy.MvpPresenter
 
 class PlayerInfoPresenter : MvpPresenter<PlayerInfoFragmentView>() {
     private val disposable = CompositeDisposable()
